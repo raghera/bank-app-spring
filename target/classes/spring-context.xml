@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<!-- DATABASE CONFIGURATION -->
+
+	<bean id="dataSource" class="oracle.jdbc.pool.OracleDataSource">
+		<property name="dataSourceName" value="dataSource" />
+		<property name="URL" value="jdbc:oracle:thin:@localhost:1521:orcl" />
+		<property name="user" value="RAVI_BANK" />
+		<property name="password" value="RAVI_BANK" />
+		<!-- <property name="connectionProperties"> <props> <prop key="com.oracle.xxxx" 
+			value="xxxx"/> </props> </property> -->
+	</bean>
+	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" 
+		/> <property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl" /> 
+		<property name="username" value="RAVI_BANK" /> <property name="password" 
+		value="RAVI_BANK" /> </bean> -->
+
+	<!-- Autowired this -->
+	<!-- <bean id="jdbcService" class="com.ravi.spring.jdbc.JdbcService">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean> -->
+
+	<!--Since Spring 3.1 this replaces SimpleJdbcTemplate (by wrapping it) -->
+	<bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<!-- <bean id="jdbcTemplate" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate"> -->
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+	<!-- Container managed JPA entityManager -->
+	<bean id="emf"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
+		<!-- Need these two to bypass persistence.xml -->
+		<!-- <property name="packagesToScan" value="com.ravi.bank.domain.service.dao*"/> -->
+		<!-- <property name="persistenceUnitName" value="bankPU"></property> -->
+	</bean>
+	
+	<!-- Below is how you get the JBoss Entity manager - name usually comp:java:bankPU -->
+	<!-- <jee:jndi-lookup id="jndiEmf" jndi-name="persistence/myPersistenceUnit"/> -->
+	
+
+	<!-- JPA implementation is Hibernate here with ORACLE -->
+	<bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"> 
+		<property name="database" value="ORACLE" /> <property name="showSql" value="true"/> 
+		<property name="generateDdl" value="false"/> <property name="databasePlatform" 
+		value="org.hibernate.dialect.Oracle10gDialect" /> 
+	</bean>
+	
+	<bean id="transactionManager"
+		class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="emf" />
+	</bean>
+	
+	<!-- BUSINESS DOMAIN BEANS -->
+		
+
+</beans>

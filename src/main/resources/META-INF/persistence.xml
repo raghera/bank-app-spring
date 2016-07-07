@@ -1,0 +1,57 @@
+<!-- 
+If you want to work with pure JPA then use this file as the standard way to do things
+However, you can configure this in Spring (> 3.1) too using a vendorAdaptor to provide all these properties
+ -->
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+
+<persistence-unit name="bankPU"> 
+  <class>com.ravi.bank.domain.service.jpa.entities.AccountImpl</class>
+  <class>com.ravi.bank.domain.service.jpa.entities.CustomerImpl</class>
+  <class>com.ravi.bank.domain.service.jpa.entities.TransactionImpl</class>
+
+  <class>com.ravi.bank.domain.security.service.jpa.entities.User</class>
+  <class>com.ravi.bank.domain.security.service.jpa.entities.Authority</class>
+
+  
+  <properties>
+      <!-- <property name="hibernate.connection.driver_class" value="oracle.jdbc.pool.OracleDataSource" /> -->
+<!--       <property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver" />
+      <property name="hibernate.connection.url" value= "jdbc:oracle:thin:@localhost:1521:orcl" />
+      <property name="hibernate.connection.username" value="RAVI_BANK" /> 
+      <property name="hibernate.connection.password" value="RAVI_BANK" />
+      <property name="hibernate.show_sql" value="true" />
+      <property name="hibernate.archive.autodetection" value="class" />
+ -->
+      <!-- JPA 2.0 and above you can use this - but make sure you are >Hibernate 3.5 -->
+   	  <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.pool.OracleDataSource" />
+      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:orcl" />
+      <property name="javax.persistence.jdbc.user" value="RAVI_BANK" />
+      <property name="javax.persistence.jdbc.password" value="RAVI_BANK" />
+      
+      <property name="hibernate.show_sql" value="true" />
+      <property name="hibernate.archive.autodetection" value="class" />
+    </properties>
+    
+  </persistence-unit>
+  
+<!-- <persistence-unit name="secPU"> 
+  <class>com.ravi.bank.domain.security.service.jpa.entities.User</class>
+  <class>com.ravi.bank.domain.security.service.jpa.entities.UserAuthority</class>
+  
+  <properties>
+
+	To do - Separate security schema
+
+      JPA 2.0 and above you can use this - but make sure you are >Hibernate 3.5
+   	  <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.pool.OracleDataSource" />
+      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:orcl" />
+      <property name="javax.persistence.jdbc.user" value="RAVI_BANK" />
+      <property name="javax.persistence.jdbc.password" value="RAVI_BANK" />
+      
+      <property name="hibernate.show_sql" value="true" />
+      <property name="hibernate.archive.autodetection" value="class" />
+    </properties>
+    
+  </persistence-unit> -->
+
+</persistence>

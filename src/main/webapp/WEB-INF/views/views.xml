@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="template" template="/WEB-INF/views/main_template.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/tiles/header.jsp" />
+		<put-attribute name="menu-left" value="/WEB-INF/views/tiles/navigation.jsp" />
+	</definition>
+
+	<definition name="home" extends="template">
+		<put-attribute name="content" value="/WEB-INF/views/login.jsp" />
+	</definition>
+	
+	<definition name="contact" extends="template">
+		<put-attribute name="content" value="/WEB-INF/views/tiles/contact.jsp" />
+	</definition>
+	
+	<!-- Create a new customer -->
+	<definition name="customer/edit" extends="template">
+		<put-attribute name="content" value="/WEB-INF/views/tiles/createEditCustomer.jsp" />
+	</definition>
+	
+	<!-- Display a customer's account details -->
+	<definition name="customer/accounts/list" extends="template">
+		<put-attribute name="content" value="/WEB-INF/views/tiles/customerAccountDetails.jsp" />
+	</definition>
+	
+	<definition name="customer/account/transactions" extends="template">
+		<put-attribute name="content" value="/WEB-INF/views/tiles/transactions.jsp" />
+	</definition>
+	
+	
+<!-- ERROR VIEWS -->
+	
+	<!-- Handle an Http 403 access denied with your own page and message -->
+	<definition name="denied403" extends="template">
+		<put-attribute name="content" value="/WEB-INF/views/tiles/http403AccessDenied.jsp" />
+	</definition>
+	
+	<definition name="customer/customernotfound" extends="template">
+		<put-attribute name="content" value="/WEB-INF/views/tiles/customerNotFound.jsp" />
+	</definition>
+	
+<!-- ERROR VIEWS END -->
+	
+</tiles-definitions>
+

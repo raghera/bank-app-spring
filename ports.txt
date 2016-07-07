@@ -1,0 +1,99 @@
+COMMAND     PID           USER   FD   TYPE             DEVICE SIZE/OFF   NODE NAME
+launchd       1           root   19u  IPv4 0x448e6308af84ecc5      0t0    UDP *:137
+launchd       1           root   20u  IPv4 0x448e6308af84eb25      0t0    UDP *:138
+launchd       1           root   27u  IPv6 0x448e6308b0023c45      0t0    TCP localhost:631 (LISTEN)
+launchd       1           root   28u  IPv4 0x448e6308b0025b65      0t0    TCP localhost:631 (LISTEN)
+UserEvent    11           root  164u  IPv4 0x448e6308af84cf85      0t0    UDP *:*
+configd      17           root   11u  IPv6 0x448e6308af84e985      0t0    UDP *:*
+configd      17           root   19u  IPv4 0x448e6308af84e305      0t0    UDP *:*
+configd      17           root   22u  IPv4 0x448e6308b07597e5      0t0    UDP *:*
+configd      17           root   24u  IPv4 0x448e6308b0759645      0t0    UDP *:*
+configd      17           root   26u  IPv4 0x448e6308b07594a5      0t0    UDP *:*
+configd      17           root   35u  IPv6 0x448e6308b2ff2cc5      0t0 ICMPV6 *:*
+netbiosd     51       _netbios    3u  IPv4 0x448e6308af84eb25      0t0    UDP *:138
+netbiosd     51       _netbios    4u  IPv4 0x448e6308af84ecc5      0t0    UDP *:137
+mDNSRespo    53 _mdnsresponder    8u  IPv4 0x448e6308b07568c5      0t0    UDP *:5353
+mDNSRespo    53 _mdnsresponder    9u  IPv6 0x448e6308af84e7e5      0t0    UDP *:5353
+mDNSRespo    53 _mdnsresponder   32u  IPv4 0x448e6308af84e645      0t0    UDP *:61777
+mDNSRespo    53 _mdnsresponder   33u  IPv6 0x448e6308b5fd8645      0t0    UDP *:61777
+mDNSRespo    53 _mdnsresponder   34u  IPv4 0x448e6308b0756a65      0t0    UDP *:60980
+mDNSRespo    53 _mdnsresponder   35u  IPv6 0x448e6308c08bb985      0t0    UDP *:60980
+mDNSRespo    53 _mdnsresponder   36u  IPv4 0x448e6308af84b585      0t0    UDP *:56671
+mDNSRespo    53 _mdnsresponder   37u  IPv6 0x448e6308bf26df45      0t0    UDP *:56671
+mDNSRespo    53 _mdnsresponder   38u  IPv4 0x448e6308af84b3e5      0t0    UDP *:59439
+mDNSRespo    53 _mdnsresponder   39u  IPv6 0x448e6308b418ea65      0t0    UDP *:59439
+mDNSRespo    53 _mdnsresponder   40u  IPv4 0x448e6308af84d465      0t0    UDP *:59847
+mDNSRespo    53 _mdnsresponder   41u  IPv6 0x448e6308bf270165      0t0    UDP *:59847
+mDNSRespo    53 _mdnsresponder   42u  IPv4 0x448e6308af84c5c5      0t0    UDP *:54253
+mDNSRespo    53 _mdnsresponder   47u  IPv6 0x448e6308b4190fc5      0t0    UDP *:54253
+mDNSRespo    53 _mdnsresponder   48u  IPv4 0x448e6308b0759cc5      0t0    UDP *:49309
+mDNSRespo    53 _mdnsresponder   50u  IPv6 0x448e6308b5051cc5      0t0    UDP *:49309
+mDNSRespo    53 _mdnsresponder   51u  IPv4 0x448e6308bf26f7a5      0t0    UDP *:64239
+mDNSRespo    53 _mdnsresponder   59u  IPv6 0x448e6308b50514a5      0t0    UDP *:64239
+mDNSRespo    53 _mdnsresponder   60u  IPv4 0x448e6308af84bda5      0t0    UDP *:53448
+mDNSRespo    53 _mdnsresponder   61u  IPv6 0x448e6308bf26ef85      0t0    UDP *:53448
+mDNSRespo    53 _mdnsresponder   62u  IPv4 0x448e6308b5fd7125      0t0    UDP *:50060
+mDNSRespo    53 _mdnsresponder   72u  IPv6 0x448e6308b0757425      0t0    UDP *:50060
+mDNSRespo    53 _mdnsresponder   73u  IPv4 0x448e6308c08bb7e5      0t0    UDP *:63882
+mDNSRespo    53 _mdnsresponder   74u  IPv6 0x448e6308b4190ae5      0t0    UDP *:63882
+mDNSRespo    53 _mdnsresponder   75u  IPv4 0x448e6308bf26f945      0t0    UDP *:51880
+mDNSRespo    53 _mdnsresponder   76u  IPv6 0x448e6308bf26eaa5      0t0    UDP *:51880
+mDNSRespo    53 _mdnsresponder   77u  IPv4 0x448e6308b4df13e5      0t0    UDP *:60192
+mDNSRespo    53 _mdnsresponder   78u  IPv6 0x448e6308b5fd7fc5      0t0    UDP *:60192
+mDNSRespo    53 _mdnsresponder   79u  IPv4 0x448e6308b5fd6f85      0t0    UDP *:56798
+mDNSRespo    53 _mdnsresponder   80u  IPv6 0x448e6308b418e8c5      0t0    UDP *:56798
+mDNSRespo    53 _mdnsresponder   81u  IPv4 0x448e6308c08bb4a5      0t0    UDP *:56515
+mDNSRespo    53 _mdnsresponder   82u  IPv6 0x448e6308af94dc85      0t0    UDP *:56515
+mDNSRespo    53 _mdnsresponder   83u  IPv4 0x448e6308b5fd72c5      0t0    UDP *:51180
+mDNSRespo    53 _mdnsresponder   86u  IPv6 0x448e6308b0757285      0t0    UDP *:51180
+mDNSRespo    53 _mdnsresponder   87u  IPv4 0x448e6308b0756da5      0t0    UDP *:57406
+mDNSRespo    53 _mdnsresponder   88u  IPv6 0x448e6308af94dae5      0t0    UDP *:57406
+locationd    57     _locationd    4u  IPv4 0x448e6308af84d605      0t0    UDP *:*
+apsd         71           root    6u  IPv4 0x448e6308c081d415      0t0    TCP 192.168.1.100:53599->17.110.227.99:5223 (ESTABLISHED)
+apsd         71           root    8u  IPv4 0x448e6308b7c78b65      0t0    TCP 192.168.1.100:53585->17.172.239.158:5223 (ESTABLISHED)
+ntpd         74           root   20u  IPv4 0x448e6308b41917e5      0t0    UDP *:123
+ntpd         74           root   21u  IPv6 0x448e6308b0755f05      0t0    UDP *:123
+ntpd         74           root   22u  IPv6 0x448e6308b4191645      0t0    UDP localhost:123
+ntpd         74           root   23u  IPv4 0x448e6308af84af05      0t0    UDP localhost:123
+ntpd         74           root   24u  IPv6 0x448e6308af84e165      0t0    UDP localhost:123
+ntpd         74           root   25u  IPv6 0x448e6308bf26f2c5      0t0    UDP ravis-macbook-pro.local:123
+ntpd         74           root   26u  IPv4 0x448e6308af84b725      0t0    UDP 192.168.1.100:123
+UserEvent   231        raghera    5u  IPv4 0x448e6308af84d125      0t0    UDP *:*
+SystemUIS   245        raghera    5u  IPv4 0x448e6308af84de25      0t0    UDP *:*
+Finder      246        raghera   39u  IPv4 0x448e6308c07ed415      0t0    TCP localhost:51996->localhost:26164 (ESTABLISHED)
+NetworkBr   252        raghera    5u  IPv4 0x448e6308af84ba65      0t0    UDP *:*
+SpotifyWe   281        raghera    6u  IPv4 0x448e6308b41d7415      0t0    TCP localhost:4370 (LISTEN)
+SpotifyWe   281        raghera    7u  IPv4 0x448e6308b41fbb65      0t0    TCP localhost:4380 (LISTEN)
+DropboxOr   286        raghera   21u  IPv4 0x448e6308bfe80415      0t0    TCP 192.168.1.100:53606->ash-rc1-2c.sjc.dropbox.com:80 (ESTABLISHED)
+DropboxOr   286        raghera   22u  IPv4 0x448e6308b80efb65      0t0    TCP localhost:26164->localhost:51996 (ESTABLISHED)
+DropboxOr   286        raghera   23u  IPv4 0x448e6308b7f72415      0t0    TCP 192.168.1.100:53998->ec2-50-19-98-28.compute-1.amazonaws.com:443 (ESTABLISHED)
+DropboxOr   286        raghera   24u  IPv4 0x448e6308bc170b65      0t0    TCP 192.168.1.100:53999->client-14a.v.dropbox.com:443 (ESTABLISHED)
+DropboxOr   286        raghera   26u  IPv4 0x448e6308b418e585      0t0    UDP *:17500
+DropboxOr   286        raghera   29u  IPv4 0x448e6308b53a1b65      0t0    TCP *:17500 (LISTEN)
+DropboxOr   286        raghera   33u  IPv4 0x448e6308bfe77415      0t0    TCP 192.168.1.100:53997->client-14a.v.dropbox.com:443 (ESTABLISHED)
+DropboxOr   286        raghera   37u  IPv4 0x448e6308b5b7eb65      0t0    TCP localhost:26164 (LISTEN)
+Spotify     320        raghera    7u  IPv4 0x448e6308b5216415      0t0    TCP localhost:4381 (LISTEN)
+Spotify     320        raghera    8u  IPv4 0x448e6308b538db65      0t0    TCP localhost:4371 (LISTEN)
+Spotify     320        raghera   36u  IPv4 0x448e6308b538d415      0t0    TCP localhost:8099 (LISTEN)
+Spotify     320        raghera   39u  IPv4 0x448e6308b53a1415      0t0    TCP *:57621 (LISTEN)
+Spotify     320        raghera   77u  IPv4 0x448e6308b5fd7c85      0t0    UDP *:57621
+Spotify     320        raghera   88u  IPv4 0x448e6308b7ff8b65      0t0    TCP 192.168.1.100:53607->194.132.168.132:443 (ESTABLISHED)
+VBoxSVC     369        raghera   15u  IPv4 0x448e6308b4191cc5      0t0    UDP *:*
+VirtualBo   374        raghera   15u  IPv4 0x448e6308b4191cc5      0t0    UDP *:*
+VirtualBo   374        raghera   32u  IPv4 0x448e6308b2ff2b25      0t0   ICMP *:*
+VirtualBo   374        raghera   35u  IPv4 0x448e6308b4222415      0t0    TCP *:2222 (LISTEN)
+VirtualBo   374        raghera   36u  IPv4 0x448e6308b4222b65      0t0    TCP *:1521 (LISTEN)
+VirtualBo   374        raghera   37u  IPv4 0x448e6308b626f415      0t0    TCP localhost:1521->localhost:49656 (ESTABLISHED)
+VirtualBo   374        raghera   38u  IPv4 0x448e6308b62acb65      0t0    TCP localhost:1521->localhost:49657 (ESTABLISHED)
+VirtualBo   374        raghera   39u  IPv4 0x448e6308b4df18c5      0t0    UDP *:56337
+VirtualBo   374        raghera   46u  IPv4 0x448e6308b5b7e415      0t0    TCP localhost:1521->localhost:49697 (CLOSE_WAIT)
+eclipse     378        raghera   80u  IPv6 0x448e6308b9e40485      0t0    TCP *:57891 (LISTEN)
+java        524        raghera  264u  IPv6 0x448e6308b811b865      0t0    TCP localhost:49382->localhost:49381 (TIME_WAIT)
+java        524        raghera  268u  IPv6 0x448e6308b811b485      0t0    TCP localhost:49656->localhost:1521 (ESTABLISHED)
+java        524        raghera  270u  IPv6 0x448e6308b0023865      0t0    TCP localhost:49657->localhost:1521 (ESTABLISHED)
+svnserve  14912        raghera    4u  IPv4 0x448e6308c07ec415      0t0    TCP *:3690 (LISTEN)
+Google    15226        raghera   63u  IPv4 0x448e6308bc17a415      0t0    TCP 192.168.1.100:53996->lhr08s05-in-f14.1e100.net:443 (ESTABLISHED)
+Google    15226        raghera   64u  IPv4 0x448e6308bfe54415      0t0    TCP 192.168.1.100:53992->lhr08s05-in-f4.1e100.net:443 (ESTABLISHED)
+Google    15226        raghera   97u  IPv4 0x448e6308bc206b65      0t0    TCP 192.168.1.100:53989->lhr08s05-in-f3.1e100.net:443 (ESTABLISHED)
+Google    15226        raghera  123u  IPv4 0x448e6308c07d8415      0t0    TCP 192.168.1.100:53914->64.233.167.188:5228 (ESTABLISHED)
+Google    15226        raghera  129u  IPv4 0x448e6308bfe7b415      0t0    TCP 192.168.1.100:53993->lhr08s05-in-f14.1e100.net:443 (ESTABLISHED)

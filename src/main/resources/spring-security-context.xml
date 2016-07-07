@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+<!-- Note in this file the default namespace used is the security one so don't have to put the security: prefix everywhere.  
+	You do however have to use beans: as a prefix if you need it anywhere -->
+	
+	<beans:bean id="sec-dataSource" class="oracle.jdbc.pool.OracleDataSource">
+		<beans:property name="dataSourceName" value="dataSource" />
+		<beans:property name="URL" value="jdbc:oracle:thin:@localhost:1521:orcl" />
+		<beans:property name="user" value="RAVI_BANK" />
+		<beans:property name="password" value="RAVI_BANK" />
+		<!-- <property name="connectionProperties"> <props> <prop key="com.oracle.xxxx" 
+			value="xxxx"/> </props> </property> -->
+	</beans:bean>
+
+	<global-method-security secured-annotations="enabled" />
+	
+	<!-- Gives you a default sec page here: http://localhost:8080/Spitter/spring_security_login -->
+<!--  	<http auto-config="true">
+		<intercept-url pattern="/**" access="ROLE_USER" />
+	</http> -->
+
+	<!-- Use your own jsp view  -->
+
+ 	<http auto-config="true" use-expressions="true">
+		<intercept-url pattern="/" access="permitAll" />
+		<intercept-url pattern="/home" access="permitAll" />
+		<intercept-url pattern="/home" access="permitAll" />
+		<intercept-url pattern="/customer/edit/*" access="permitAll" />
+		<intercept-url pattern="/**" access="hasRole('ROLE_USER')"/>
+		<form-login login-processing-url="/static/j_spring_security_check"
+			login-page="/home"
+			authentication-failure-url="/home?auth=fail"
+			default-target-url="/customer/login" />
+		<logout logout-url="/static/j_spring_security_logout"
+			logout-success-url="/home?logout"/>
+		<access-denied-handler error-page="/customer/login/denied403"/> <!-- Handles the http 403 response where user does not have privs to access  -->
+	</http>
+
+<!-- Relational DB sec config. Try and use an LDAP server in future. -->
+
+ 	<authentication-manager>
+		<authentication-provider>
+		<!-- if this is enabled then have to encrypt your db strings too -->
+ 			<!-- <password-encoder hash="md5"/>  -->
+			<jdbc-user-service data-source-ref="sec-dataSource"
+				  users-by-username-query="select username, password, 1 as enabled from users where username=?"
+				  authorities-by-username-query="select u.username, a.authority from users u, authorities a where u.user_id = a.user_id and u.username = ?"
+			/>
+			<!-- default auth query is sufficient:
+			authorities-by-username-query="
+			      	select username,authority
+					from authorities
+					where username = ?;" -->
+		</authentication-provider>
+	</authentication-manager>
+ 
+ 
+ <!-- authorities-by-username-query="select username,authority from authorities where username = ?" -->
+ <!-- users-by-username-query="select username, password, case enabled when 1 then 'true' else 'false' end enabled from users where username=?" -->
+ 
+<!-- users-by-username-query="
+			         SELECT USERNAME, PASSWORD, CASE ENABLED WHEN 1 THEN 'true' ELSE 'false' END ENABLED
+			         FROM USERS
+			         WHERE USERNAME=?;"
+				  authorities-by-username-query="
+			      	select username,authority
+					from authorities
+					where username = ?;" -->
+<!-- Basic config for testing Security  -->
+<!--     <authentication-manager>
+        <authentication-provider>
+            <user-service>
+                <user name="admin" password="admin" authorities="ROLE_ADMIN" />
+ 				<user name="raghera@hotmail.com" password="test" authorities="ROLE_ADMIN, ROLE_USER" />
+                <user name="test@test.com" password="test" authorities="ROLE_USER" />
+			</user-service>
+        </authentication-provider>
+    </authentication-manager>
+ -->
+
+</beans:beans>

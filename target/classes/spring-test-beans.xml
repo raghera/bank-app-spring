@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<!-- TEST ENTITY BEANS -->
+	
+	<bean id="testAccount" 
+		class="com.ravi.bank.domain.service.jpa.entities.AccountImpl" scope="prototype">
+		<property name="balance" value="100.0"></property>
+		<property name="currencyId" value="1"></property>
+		<property name="status" value="OPEN"></property> <!-- Enum wiring -->
+		<property name="accountType" value="CURRENT"></property> <!-- Enum wiring -->
+		
+	</bean>
+	
+	<bean id="testCustomer" 
+		class="com.ravi.bank.domain.service.jpa.entities.CustomerImpl" scope="prototype">
+		<property name="customerType" value="1"></property>
+		<property name="firstName" value="Ravi"></property>
+		<property name="surname" value="Aghera"></property>
+		<property name="countryCode" value="GB"></property>
+		<property name="email" value="default@value.com"></property> <!-- This must be replaced in code to be unique for each Customer -->
+	</bean>
+	
+	<bean id="testTransaction" 
+		class="com.ravi.bank.domain.service.jpa.entities.TransactionImpl" scope="prototype">
+		<property name="amount" value="10"></property>
+		<property name="currency" value="1"></property>
+		<property name="transactionType" value="1"></property>
+	</bean>
+
+</beans>
